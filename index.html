@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Expense Tracker App</title>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1 class="title">Expense Tracker App</h1>
-    <header>
-
-    <section class="content">
-        <h3 class="secondTitle">Add a new item: </h3>
-        <div class="form">
-            <form id="expForm">
-                <div class="formLine left">
-                    <span for="type">Type:</span>
-                    <select id="type">
-                        <option value="chooseOne">Choose one...</option>
-                        <option value="Card">Card</option>
-                        <option value="Cash">Cash</option>
-                        <option value="Cryptocoin">Cryptocoin</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="formLine right">
-                    <span for="name">Name:</span>
-                    <input type="text" id="name">
-                </div>
-
-                <div class="formLine left">
-                    <span for="date">Date:</span>
-                    <input type="date" id="date">
-                </div>
-                <div class="formLine right">
-                    <span for="amount">Amount:</span>
-                    <input type="text" id="amount">
-                </div>
-                <button type="submit" class="buttonSave">Add a new expense</button>
-            </form>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spendify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="sub-container">
+          <div class="total-amount-container">
+            <h3>Budget</h3>
+            <p class="hide error" id="budget-error">
+              Value cannot be empty or negative
+            </p>
+            <input
+              type="number"
+              id="total-amount"
+              placeholder="Enter Total Amount"
+            />
+            <button class="submit" id="total-amount-button">Set Budget</button>
+          </div>
+          <div class="user-amount-container">
+            <h3>Expenses</h3>
+            <p class="hide error" id="product-title-error">
+              Values cannot be empty
+            </p>
+            <input
+              type="text"
+              class="product-title"
+              id="product-title"
+              placeholder="Enter Title of Product"
+            />
+            <input
+              type="number"
+              id="user-amount"
+              placeholder="Enter Cost of Product"
+            />
+            <button class="submit" id="check-amount">Check Amount</button>
+          </div>
         </div>
-    </section>
-    <section class="content">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Options</th>
-                </tr>
-            </thead>
-            <tbody id="expenseTable">
-            </tbody>
-        </table>
-    </section>
+        <div class="output-container flex-space">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount">0</span>
+          </div>
+          <div>
+            <p>Expenses</p>
+            <span id="expenditure-value">0</span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balance-amount">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <h3>Expense List</h3>
+        <div class="list-container" id="list"></div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
